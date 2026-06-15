@@ -88,3 +88,8 @@ variable "student_email" {
   description = "Student email used for the Creator tag."
   type        = string
 }
+variable "ip_configuration_name" {
+  description = "Name of the network interface IP configuration."
+  type        = string
+}
+
