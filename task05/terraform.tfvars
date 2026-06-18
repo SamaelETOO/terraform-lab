@@ -1,5 +1,5 @@
 student_email      = "giorgi_imerlishvili1@epam.com"
-allowed_ip_address = "18.153.146.156"
+allowed_ip_address = "18.153.146.156/32"
 
 app_allow_ip_rule  = "allow-ip"
 app_allow_tag_rule = "allow-tm"
