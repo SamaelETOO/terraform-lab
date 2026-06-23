@@ -8,7 +8,7 @@ name_prefix = "cmaz-s0n7ozwy-mod6"
 student_email = "giorgi_imerlishvili1@epam.com"
 
 sql_admin_username        = "sqladminuser"
-sql_admin_secret_name     = "sql-admin-username"
+sql_admin_secret_name     = "sql-admin-name"
 sql_admin_secret_password = "sql-admin-password"
 
 sql_sku      = "S2"
