@@ -50,7 +50,7 @@ module "cdn" {
   blob_file           = var.blob_file
   resource_group_name = var.rg_name
   location            = var.location
-  primary_blob_host   = azurerm_storage_account.sa.primary_blob_host
+  primary_blob_host   = azurerm_storage_account.sa.primary_web_host
 
   fd_profile_name      = var.fd_profile_name
   fd_profile_sku       = var.fd_profile_sku
