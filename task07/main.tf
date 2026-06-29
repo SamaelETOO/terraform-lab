@@ -31,7 +31,7 @@ resource "azurerm_storage_account" "sa" {
       account_replication_type,
       access_tier,
       account_kind,
-      enable_https_traffic_only,
+      https_traffic_only_enabled,
       min_tls_version,
       allow_nested_items_to_be_public,
       cross_tenant_replication_enabled,
