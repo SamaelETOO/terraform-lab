@@ -42,3 +42,8 @@ variable "fd_route_name" {
   type        = string
   description = "Front Door Route name"
 }
+
+variable "blob_file" {
+  type        = string
+  description = "Name of the blob file in the Storage Account"
+}

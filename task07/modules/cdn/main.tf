@@ -40,7 +40,7 @@ resource "azurerm_cdn_frontdoor_route" "route" {
   cdn_frontdoor_origin_group_id = azurerm_cdn_frontdoor_origin_group.origin_group.id
   cdn_frontdoor_origin_ids      = [azurerm_cdn_frontdoor_origin.origin.id]
 
-  patterns_to_match   = ["/*"]
+  patterns_to_match   = ["/${var.blob_file}"]
   supported_protocols = ["Http", "Https"]
   forwarding_protocol = "MatchRequest"
 

@@ -46,8 +46,8 @@ import {
 }
 
 module "cdn" {
-  source = "./modules/cdn"
-
+  source              = "./modules/cdn"
+  blob_file           = var.blob_file
   resource_group_name = var.rg_name
   location            = var.location
   primary_blob_host   = azurerm_storage_account.sa.primary_blob_host
