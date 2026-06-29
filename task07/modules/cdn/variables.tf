@@ -47,3 +47,9 @@ variable "blob_file" {
   type        = string
   description = "Name of the blob file in the Storage Account"
 }
+
+variable "cdn_origin_path" {
+  type        = string
+  description = "Origin path for the CDN Front Door"
+  default     = "/"
+}

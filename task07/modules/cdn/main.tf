@@ -12,22 +12,19 @@ resource "azurerm_cdn_frontdoor_endpoint" "endpoint" {
 resource "azurerm_cdn_frontdoor_origin_group" "origin_group" {
   name                     = var.fd_origin_group_name
   cdn_frontdoor_profile_id = azurerm_cdn_frontdoor_profile.profile.id
-
   session_affinity_enabled = false
-
-  load_balancing {
-  }
+  load_balancing {}
 }
 
 resource "azurerm_cdn_frontdoor_origin" "origin" {
   name                          = var.fd_origin_name
   cdn_frontdoor_origin_group_id = azurerm_cdn_frontdoor_origin_group.origin_group.id
   enabled                       = true
-
-  host_name          = var.primary_blob_host
-  http_port          = 80
-  https_port         = 443
-  origin_host_header = var.primary_blob_host
+  host_name                     = var.primary_blob_host
+  http_port                     = 80
+  https_port                    = 443
+  origin_host_header            = var.primary_blob_host
+  cdn_frontdoor_origin_path     = var.cdn_origin_path
 
   certificate_name_check_enabled = false
   priority                       = 1
@@ -39,10 +36,8 @@ resource "azurerm_cdn_frontdoor_route" "route" {
   cdn_frontdoor_endpoint_id     = azurerm_cdn_frontdoor_endpoint.endpoint.id
   cdn_frontdoor_origin_group_id = azurerm_cdn_frontdoor_origin_group.origin_group.id
   cdn_frontdoor_origin_ids      = [azurerm_cdn_frontdoor_origin.origin.id]
-
-  patterns_to_match   = ["/*"]
-  supported_protocols = ["Http", "Https"]
-  forwarding_protocol = "MatchRequest"
-
-  link_to_default_domain = true
+  patterns_to_match             = ["/*"]
+  supported_protocols           = ["Http", "Https"]
+  forwarding_protocol           = "MatchRequest"
+  link_to_default_domain        = true
 }
