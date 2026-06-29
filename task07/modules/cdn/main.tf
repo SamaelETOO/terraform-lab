@@ -24,8 +24,6 @@ resource "azurerm_cdn_frontdoor_origin" "origin" {
   http_port                     = 80
   https_port                    = 443
   origin_host_header            = var.primary_blob_host
-  cdn_frontdoor_origin_path     = var.cdn_origin_path
-
   certificate_name_check_enabled = false
   priority                       = 1
   weight                         = 1000
@@ -37,6 +35,7 @@ resource "azurerm_cdn_frontdoor_route" "route" {
   cdn_frontdoor_origin_group_id = azurerm_cdn_frontdoor_origin_group.origin_group.id
   cdn_frontdoor_origin_ids      = [azurerm_cdn_frontdoor_origin.origin.id]
   patterns_to_match             = ["/*"]
+  origin_path                   = "/data"
   supported_protocols           = ["Http", "Https"]
   forwarding_protocol           = "MatchRequest"
   link_to_default_domain        = true
