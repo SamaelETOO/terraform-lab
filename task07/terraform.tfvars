@@ -1,5 +1,5 @@
 # task07/terraform.tfvars
-location             = "France Central"
+location             = "East US"
 rg_name              = "cmtr-s0n7ozwy-mod7-rg"
 rg_id                = "/subscriptions/3088fc2a-c65e-4c26-8bfa-af9661c1f2b9/resourceGroups/cmtr-s0n7ozwy-mod7-rg"
 sa_name              = "cmtrs0n7ozwymod7sa"
