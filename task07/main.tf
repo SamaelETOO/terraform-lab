@@ -51,7 +51,6 @@ module "cdn" {
   resource_group_name = var.rg_name
   location            = var.location
   primary_blob_host   = azurerm_storage_account.sa.primary_blob_host
-  cdn_origin_path     = "/blob.txt"
 
   fd_profile_name      = var.fd_profile_name
   fd_profile_sku       = var.fd_profile_sku
