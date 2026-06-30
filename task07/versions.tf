@@ -11,4 +11,5 @@ terraform {
 
 provider "azurerm" {
   features {}
+  disable_terraform_partner_id = true
 }
