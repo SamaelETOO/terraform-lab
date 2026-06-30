@@ -9,7 +9,7 @@ resource "azurerm_resource_group" "rg" {
 
 import {
   to = azurerm_resource_group.rg
-  id = "/subscriptions/3088fc2a-c65e-4c26-8bfa-af9661c1f2b9/resourceGroups/cmtr-s0n7ozwy-mod7-rg" 
+  id = "/subscriptions/3088fc2a-c65e-4c26-8bfa-af9661c1f2b9/resourceGroups/cmtr-s0n7ozwy-mod7-rg"
 }
 
 resource "azurerm_storage_account" "sa" {
