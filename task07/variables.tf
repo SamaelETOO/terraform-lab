@@ -58,3 +58,8 @@ variable "fd_route_name" {
   type        = string
   description = "CDN Front Door route name"
 }
+
+variable "container_name" {
+  type        = string
+  description = "Name of the existing blob container in the Storage Account that holds the target blob file"
+}

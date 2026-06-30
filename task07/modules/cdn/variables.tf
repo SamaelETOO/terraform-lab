@@ -47,3 +47,8 @@ variable "blob_file" {
   type        = string
   description = "Name of the blob file in the Storage Account"
 }
+
+variable "container_name" {
+  type        = string
+  description = "Name of the blob container on the origin, used to build the Front Door origin path"
+}
