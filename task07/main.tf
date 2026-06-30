@@ -53,7 +53,7 @@ resource "azurerm_storage_container" "container" {
 
 import {
   to = azurerm_storage_container.container
-  id = local.container_resource_id
+  id = "https://cmtrs0n7ozwymod7sa.blob.core.windows.net/mycontainer"
 }
 
 module "cdn" {
