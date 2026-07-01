@@ -42,27 +42,13 @@ import {
   id = "/subscriptions/3088fc2a-c65e-4c26-8bfa-af9661c1f2b9/resourceGroups/cmtr-s0n7ozwy-mod7-rg/providers/Microsoft.Storage/storageAccounts/cmtrs0n7ozwymod7sa"
 }
 
-resource "azurerm_storage_container" "container" {
-  name                 = var.container_name
-  storage_account_name = azurerm_storage_account.sa.name
-
-  lifecycle {
-    ignore_changes = [container_access_type]
-  }
-}
-
-import {
-  to = azurerm_storage_container.container
-  id = "https://cmtrs0n7ozwymod7sa.blob.core.windows.net/mycontainer"
-}
-
 module "cdn" {
   source = "./modules/cdn"
 
   resource_group_name = var.rg_name
   location            = var.location
   primary_blob_host   = azurerm_storage_account.sa.primary_blob_host
-  container_name      = azurerm_storage_container.container.name
+  container_name      = var.container_name
   blob_file           = var.blob_file
 
   fd_profile_name      = var.fd_profile_name
